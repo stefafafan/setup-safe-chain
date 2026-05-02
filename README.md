@@ -18,8 +18,6 @@ steps:
     with:
       version: 1.5.1
       installer-sha256: 7c910fff717649c86cc8ca960e6c054d3734da2d660050e3bcfc54029e3b485b
-
-  - run: pnpm install --frozen-lockfile
 ```
 
 The action always runs the Safe Chain installer with `--ci`, which makes the upstream installer run Safe Chain's `setup-ci` command for CI environments.
