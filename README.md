@@ -20,8 +20,6 @@ steps:
       installer-sha256: 7c910fff717649c86cc8ca960e6c054d3734da2d660050e3bcfc54029e3b485b
 ```
 
-The action always runs the Safe Chain installer with `--ci`, which makes the upstream installer run Safe Chain's `setup-ci` command for CI environments.
-
 ## Inputs
 
 | Input | Required | Default | Description |
@@ -34,8 +32,6 @@ The action always runs the Safe Chain installer with `--ci`, which makes the ups
 GitHub release assets expose a `digest` field. For example:
 
 ```sh
-version=1.5.1
-
-gh api "repos/AikidoSec/safe-chain/releases/tags/${version}" \
+gh api "repos/AikidoSec/safe-chain/releases/tags/1.5.1" \
   --jq '.assets[] | select(.name == "install-safe-chain.sh").digest | sub("^sha256:"; "")'
 ```
