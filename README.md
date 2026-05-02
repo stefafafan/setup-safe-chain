@@ -22,10 +22,10 @@ steps:
 
 ## Inputs
 
-| Input | Required | Default | Description |
-| --- | --- | --- | --- |
-| `version` | yes | | Safe Chain release version to install. |
-| `installer-sha256` | yes | | 64-character SHA256 hex digest of `install-safe-chain.sh` for the selected release. |
+| Input | Required | Description |
+| --- | --- | --- |
+| `version` | yes | Safe Chain release version to install. |
+| `installer-sha256` | yes | 64-character SHA256 hex digest of `install-safe-chain.sh` for the selected release. |
 
 ## Finding the Installer SHA256
 
