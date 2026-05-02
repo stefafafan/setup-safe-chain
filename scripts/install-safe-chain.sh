@@ -8,9 +8,15 @@ fi
 
 version="$1"
 installer_sha256="$2"
-installer="${RUNNER_TEMP}/install-safe-chain.sh"
+
+if [[ ! "$installer_sha256" =~ ^[0-9a-fA-F]{64}$ ]]; then
+  echo "installer-sha256 must be a 64-character SHA256 hex digest" >&2
+  exit 2
+fi
+
+installer="/tmp/install-safe-chain.sh"
 trap 'rm -f "$installer"' EXIT
 
 curl -fsSL "https://github.com/AikidoSec/safe-chain/releases/download/${version}/install-safe-chain.sh" -o "$installer"
-echo "${installer_sha256}  $installer" | sha256sum -c -
+printf '%s  %s\n' "$installer_sha256" "$installer" | sha256sum -c -
 sh "$installer" --ci

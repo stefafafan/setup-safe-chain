@@ -27,7 +27,7 @@ The action always runs the Safe Chain installer with `--ci`, which makes the ups
 | Input | Required | Default | Description |
 | --- | --- | --- | --- |
 | `version` | yes | | Safe Chain release version to install. |
-| `installer-sha256` | yes | | SHA256 digest of `install-safe-chain.sh` for the selected release. |
+| `installer-sha256` | yes | | 64-character SHA256 hex digest of `install-safe-chain.sh` for the selected release. |
 
 ## Finding the Installer SHA256
 
