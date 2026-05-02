@@ -14,7 +14,7 @@ runs:
   steps:
     - name: Install Safe Chain
       shell: bash
-      env:
-        SAFE_CHAIN_VERSION: ${{ inputs.version }}
-        SAFE_CHAIN_INSTALLER_SHA256: ${{ inputs.installer-sha256 }}
-      run: bash "${{ github.action_path }}/scripts/install-safe-chain.sh"
+      run: >-
+        "${{ github.action_path }}/scripts/install-safe-chain.sh"
+        "${{ inputs.version }}"
+        "${{ inputs.installer-sha256 }}"
